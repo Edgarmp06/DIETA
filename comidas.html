@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Alimenticio Bajo en Grasas para Pérdida de Peso</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c8d75;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2c8d75;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #2c8d75;
+            padding-left: 15px;
+            margin-top: 40px;
+            background-color: #e8f4f0;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        h3 {
+            color: #3498db;
+            margin-top: 20px;
+            border-bottom: 1px solid #bde0d4;
+            padding-bottom: 5px;
+        }
+        .day-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .meal {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #bde0d4;
+        }
+        .meal-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .macro-info {
+            background-color: #e8f4f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .food-item {
+            margin-left: 15px;
+            position: relative;
+            line-height: 1.8;
+        }
+        .food-item::before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            color: #2c8d75;
+        }
+        .daily-total {
+            background-color: #eaf7f1;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            border-left: 5px solid #2c8d75;
+        }
+        .notes {
+            background-color: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 10px 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .section {
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .header-info {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #3498db;
+        }
+        .macro-explanation {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .macro-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            min-width: 180px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .macro-item h4 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .carbs { border-top: 4px solid #e74c3c; }
+        .protein { border-top: 4px solid #3498db; }
+        .fat { border-top: 4px solid #f1c40f; }
+        .merienda-options {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .merienda-option {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .merienda-option:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        @media print {
+            body {
+                padding: 0;
+                background-color: white;
+            }
+            .day-container, .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            h2 {
+                break-after: avoid;
+            }
+            h3 {
+                break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>PLAN ALIMENTICIO BAJO EN GRASAS PARA PÉRDIDA DE PESO</h1>
+    
+    <div class="header-info">
+        <p><strong>Requerimiento calórico diario:</strong> 2255 kcal</p>
+        <div class="macro-explanation">
+            <div class="macro-item carbs">
+                <h4>Carbohidratos</h4>
+                <p>60%</p>
+                <p>338g</p>
+                <p>1352 kcal</p>
+            </div>
+            <div class="macro-item protein">
+                <h4>Proteínas</h4>
+                <p>25%</p>
+                <p>141g</p>
+                <p>564 kcal</p>
+            </div>
+            <div class="macro-item fat">
+                <h4>Grasas</h4>
+                <p>15%</p>
+                <p>38g</p>
+                <p>342 kcal</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>LUNES</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+            <div class="food-item">Bebida energética zero (antes del gym)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo (post-gym)</p>
+            <p class="macro-info">380 kcal | P: 25g | C: 60g | G: 3g</p>
+            <div class="food-item">2 rebanadas de pan integral (60g)</div>
+            <div class="food-item">100g de pechuga de pavo</div>
+            <div class="food-item">Calabacín en rodajas finas (crudo, tipo carpaccio)</div>
+            <div class="food-item">1 manzana mediana</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">750 kcal | P: 45g | C: 110g | G: 8g</p>
+            <div class="food-item">150g de arroz integral (en seco, pesa más cocinado)</div>
+            <div class="food-item">180g de pechuga de pollo a la plancha</div>
+            <div class="food-item">Canónigos aliñados con limón (sin aceite)</div>
+            <div class="food-item">1 yogur desnatado con 1 cucharadita de miel</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (18:15-18:40)</p>
+            <p class="macro-info">320 kcal | P: 15g | C: 55g | G: 4g</p>
+            <div class="food-item">Napolitana de jamón york y queso ligera (versión reducida en grasa)</div>
+            <div class="food-item">1 pieza de fruta (pera o manzana)</div>
+            <div class="food-item">Bebida energética zero (opcional)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena rápida (post-clase 21:20)</p>
+            <p class="macro-info">500 kcal | P: 38g | C: 65g | G: 8g</p>
+            <div class="food-item">Claras de huevo (4) con una yema y jamón york bajo en grasa</div>
+            <div class="food-item">1 rebanada de pan integral tostado</div>
+            <div class="food-item">130g de patatas al horno con hierbas (sin aceite)</div>
+            <div class="food-item">1 yogur desnatado</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 2177 kcal | P: 141g | C: 311g | G: 29.6g
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>MARTES</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+            <div class="food-item">Bebida energética zero (antes del gym)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo (post-gym)</p>
+            <p class="macro-info">370 kcal | P: 22g | C: 60g | G: 4g</p>
+            <div class="food-item">2 rebanadas de pan integral (60g)</div>
+            <div class="food-item">80g de pavo bajo en grasa</div>
+            <div class="food-item">30g de hummus light</div>
+            <div class="food-item">1 naranja</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">770 kcal | P: 45g | C: 125g | G: 9g</p>
+            <div class="food-item">120g de pasta integral (en seco)</div>
+            <div class="food-item">150g de carne picada de pollo o pavo (muy baja en grasa)</div>
+            <div class="food-item">Salsa de tomate casera sin aceite</div>
+            <div class="food-item">20g de queso rallado light</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (18:15-18:40)</p>
+            <p class="macro-info">320 kcal | P: 15g | C: 55g | G: 4g</p>
+            <div class="food-item">Sandwich mixto con pan integral y jamón y queso bajos en grasa</div>
+            <div class="food-item">1 yogur desnatado de sabores</div>
+            <div class="food-item">Bebida energética zero (opcional)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena rápida (post-clase 21:20)</p>
+            <p class="macro-info">480 kcal | P: 40g | C: 55g | G: 9g</p>
+            <div class="food-item">2 latas de atún al natural (escurrido)</div>
+            <div class="food-item">Calabacín a la plancha con ajo en polvo (spray de aceite)</div>
+            <div class="food-item">90g de arroz integral</div>
+            <div class="food-item">1 mandarina</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 2167 kcal | P: 140g | C: 316g | G: 32.6g
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>MIÉRCOLES</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+            <div class="food-item">Bebida energética zero (antes del gym)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo (post-gym)</p>
+            <p class="macro-info">365 kcal | P: 25g | C: 58g | G: 3g</p>
+            <div class="food-item">2 rebanadas de pan integral (60g)</div>
+            <div class="food-item">50g de queso fresco 0%</div>
+            <div class="food-item">Calabacín rallado fino (como sustituto de tomate)</div>
+            <div class="food-item">1 pera</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">750 kcal | P: 45g | C: 110g | G: 10g</p>
+            <div class="food-item">Burrito con:</div>
+            <div class="food-item" style="margin-left: 30px;">1 tortilla grande de trigo integral</div>
+            <div class="food-item" style="margin-left: 30px;">150g de pollo desmenuzado</div>
+            <div class="food-item" style="margin-left: 30px;">30g de queso rallado bajo en grasa</div>
+            <div class="food-item" style="margin-left: 30px;">Calabacín en tiras finas</div>
+            <div class="food-item">1 yogur desnatado con canela</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (18:15-18:40)</p>
+            <p class="macro-info">320 kcal | P: 15g | C: 55g | G: 4g</p>
+            <div class="food-item">Bocadito de tortilla con pan integral (versión baja en grasa)</div>
+            <div class="food-item">1 plátano pequeño</div>
+            <div class="food-item">Bebida energética zero (opcional)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena rápida (post-clase 21:20)</p>
+            <p class="macro-info">550 kcal | P: 38g | C: 75g | G: 9g</p>
+            <div class="food-item">130g de pechuga de pollo en tiras con especias (mínimo aceite en spray)</div>
+            <div class="food-item">170g de patatas al horno precocidas</div>
+            <div class="food-item">Calabacín a la plancha (con spray de aceite)</div>
+            <div class="food-item">1 yogur 0%</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 2212 kcal | P: 141g | C: 319g | G: 32.6g
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>JUEVES</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+            <div class="food-item">Bebida energética zero (antes del gym)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo (post-gym)</p>
+            <p class="macro-info">350 kcal | P: 20g | C: 60g | G: 4g</p>
+            <div class="food-item">2 rebanadas de pan integral (60g)</div>
+            <div class="food-item">1 cucharada de crema de cacahuete light</div>
+            <div class="food-item">1 plátano pequeño</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">770 kcal | P: 48g | C: 115g | G: 10g</p>
+            <div class="food-item">150g de muslo de pollo (sin piel) asado con hierbas</div>
+            <div class="food-item">200g de patatas al horno con romero (sin aceite, usa spray)</div>
+            <div class="food-item">Calabacín a la plancha con especias</div>
+            <div class="food-item">1 yogur desnatado de frutas</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (18:15-18:40)</p>
+            <p class="macro-info">320 kcal | P: 15g | C: 55g | G: 4g</p>
+            <div class="food-item">Croissant integral bajo en grasa</div>
+            <div class="food-item">200ml de batido de proteínas light</div>
+            <div class="food-item">Bebida energética zero (opcional)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena rápida (post-clase 21:20)</p>
+            <p class="macro-info">530 kcal | P: 35g | C: 70g | G: 8g</p>
+            <div class="food-item">Tortilla de claras (4 claras + 1 huevo entero)</div>
+            <div class="food-item">60g de pan integral</div>
+            <div class="food-item">90g de arroz integral con verduras</div>
+            <div class="food-item">1 yogur desnatado</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 2197 kcal | P: 136g | C: 321g | G: 32.6g
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>VIERNES</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+            <div class="food-item">Bebida energética zero (antes del gym)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo (post-gym)</p>
+            <p class="macro-info">375 kcal | P: 22g | C: 65g | G: 3g</p>
+            <div class="food-item">2 rebanadas de pan integral (60g)</div>
+            <div class="food-item">80g de jamón york bajo en grasa</div>
+            <div class="food-item">20g de queso fresco light</div>
+            <div class="food-item">1 plátano</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">730 kcal | P: 45g | C: 110g | G: 8g</p>
+            <div class="food-item">150g de arroz integral</div>
+            <div class="food-item">150g de atún al natural (escurrido)</div>
+            <div class="food-item">Ensalada de canónigos aliñada con limón y vinagre</div>
+            <div class="food-item">1 yogur griego 0% con 1 cucharadita de miel</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (18:15-18:40)</p>
+            <p class="macro-info">320 kcal | P: 15g | C: 55g | G: 4g</p>
+            <div class="food-item">Triángulo de queso fresco con pan integral</div>
+            <div class="food-item">1 manzana</div>
+            <div class="food-item">Bebida energética zero (opcional)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena rápida (post-clase 21:20)</p>
+            <p class="macro-info">530 kcal | P: 35g | C: 70g | G: 9g</p>
+            <div class="food-item">Wrap de Mercadona bajo en grasa (versión de pollo)</div>
+            <div class="food-item">1 puñado pequeño de patatas fritas horneadas (no fritas)</div>
+            <div class="food-item">1 naranja</div>
+            <div class="food-item">1 yogur desnatado</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 2182 kcal | P: 135g | C: 321g | G: 30.6g
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>DÍA SIN GYM (ENTRE SEMANA)</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo (sin entrenamiento)</p>
+            <p class="macro-info">260 kcal | P: 25g | C: 35g | G: 3g</p>
+            <div class="notes">Elige una de estas opciones:</div>
+            
+            <div style="margin-left: 15px; margin-top: 10px;">
+                <p style="font-weight: bold;">Opción proteica: (260 kcal | P: 25g | C: 35g | G: 3g)</p>
+                <div class="food-item">1 yogur griego 0%</div>
+                <div class="food-item">100g de pechuga de pavo</div>
+                <div class="food-item">1 pieza de fruta pequeña</div>
+            </div>
+            
+            <div style="margin-left: 15px; margin-top: 15px;">
+                <p style="font-weight: bold;">Opción equilibrada: (270 kcal | P: 20g | C: 40g | G: 4g)</p>
+                <div class="food-item">1 rebanada de pan integral</div>
+                <div class="food-item">70g de jamón serrano (parte magra, quitar grasa visible)</div>
+                <div class="food-item">1 pieza pequeña de fruta</div>
+            </div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">750 kcal | P: 45g | C: 115g | G: 8g</p>
+            <div class="food-item">120g de pasta integral</div>
+            <div class="food-item">150g de pechuga de pollo en dados</div>
+            <div class="food-item">Salsa de tomate casera sin aceite</div>
+            <div class="food-item">Pan integral (40g)</div>
+            <div class="food-item">1 yogur desnatado</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (18:15-18:40)</p>
+            <p class="macro-info">320 kcal | P: 15g | C: 55g | G: 4g</p>
+            <div class="food-item">Napolitana de jamón york y queso (versión baja en grasa)</div>
+            <div class="food-item">1 yogur bebible 0%</div>
+            <div class="food-item">Bebida energética zero (solo si la necesitas)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena</p>
+            <p class="macro-info">690 kcal | P: 38g | C: 95g | G: 12g</p>
+            <div class="food-item">Lasaña precocinada de Mercadona (versión light)</div>
+            <div class="food-item">Calabacín a la plancha (5 minutos) con spray de aceite</div>
+            <div class="food-item">1 yogur desnatado</div>
+            <div class="food-item">1 pieza de fruta</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 2247 kcal | P: 141g | C: 321g | G: 33.6g
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>SÁBADO</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo</p>
+            <p class="macro-info">325 kcal | P: 25g | C: 50g | G: 3g</p>
+            <div class="food-item">Yogur griego 0% con 1 cucharadita de miel</div>
+            <div class="food-item">30g de cereales integrales sin azúcar</div>
+            <div class="food-item">1 plátano</div>
+            <div class="food-item">3 claras de huevo cocidas</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">700 kcal | P: 45g | C: 90g | G: 12g</p>
+            <div class="food-item">150g de lomo de cerdo (parte magra) a la plancha</div>
+            <div class="food-item">200g de patatas asadas (con mínimo aceite en spray)</div>
+            <div class="food-item">Calabacín a la plancha</div>
+            <div class="food-item">1 yogur desnatado</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (tarde)</p>
+            <p class="macro-info">320 kcal | P: 15g | C: 55g | G: 4g</p>
+            <div class="food-item">Sándwich mixto con pan integral y jamón y queso bajos en grasa</div>
+            <div class="food-item">1 manzana</div>
+            <div class="food-item">Bebida energética zero (si la necesitas por la tarde)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena (fuera - Pizza)</p>
+            <p class="macro-info">550 kcal | P: 35g | C: 80g | G: 10g</p>
+            <div class="food-item">2 porciones de pizza con masa fina (pide con extra de proteína como pollo y menos queso)</div>
+            <div class="food-item">Ensalada verde de acompañamiento (sin aliño graso)</div>
+            <div class="food-item">1 refresco zero</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 2122 kcal | P: 138g | C: 296g | G: 35.6g
+        </div>
+    </div>
+
+    <div class="day-container">
+        <h2>DOMINGO (DESPUÉS DE EXCESO DEL SÁBADO)</h2>
+        
+        <div class="meal">
+            <p class="meal-title">Desayuno</p>
+            <p class="macro-info">227 kcal | P: 18g | C: 21g | G: 6.6g</p>
+            <div class="food-item">Batido de chocolate Herbalife (250ml)</div>
+            <div class="food-item">Té verde o infusión sin azúcar</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Almuerzo</p>
+            <p class="macro-info">300 kcal | P: 25g | C: 45g | G: 2g</p>
+            <div class="food-item">Yogur griego 0%</div>
+            <div class="food-item">30g de cereales integrales sin azúcar</div>
+            <div class="food-item">100g de frutos rojos (frambuesas, fresas, arándanos)</div>
+            <div class="food-item">100g de claras de huevo cocinadas</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Comida</p>
+            <p class="macro-info">650 kcal | P: 45g | C: 90g | G: 5g</p>
+            <div class="food-item">150g de pechuga de pollo a la plancha</div>
+            <div class="food-item">120g de arroz integral hervido</div>
+            <div class="food-item">Ensalada grande de canónigos con limón</div>
+            <div class="food-item">1 manzana</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Merienda (tarde)</p>
+            <p class="macro-info">280 kcal | P: 20g | C: 45g | G: 2g</p>
+            <div class="food-item">1 yogur proteico 0%</div>
+            <div class="food-item">1 plátano pequeño</div>
+            <div class="food-item">4-5 galletas de arroz</div>
+            <div class="food-item">Bebida energética zero (opcional)</div>
+        </div>
+        
+        <div class="meal">
+            <p class="meal-title">Cena</p>
+            <p class="macro-info">500 kcal | P: 40g | C: 60g | G: 5g</p>
+            <div class="food-item">Sopa de verduras clara (sin grasa)</div>
+            <div class="food-item">150g de pescado blanco al horno (merluza o bacalao)</div>
+            <div class="food-item">100g de patata hervida con perejil</div>
+            <div class="food-item">Infusión digestiva sin azúcar</div>
+        </div>
+        
+        <div class="daily-total">
+            TOTAL DIARIO APROXIMADO: 1957 kcal | P: 148g | C: 261g | G: 20.6g
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Información Adicional</h2>
+        <p>Este plan alimenticio está diseñado para:</p>
+        <ul>
+            <li>Mantener un déficit calórico controlado</li>
+            <li>Proporcionar una distribución equilibrada de macronutrientes</li>
+            <li>Favorecer la pérdida de peso de manera saludable</li>
+        </ul>
+        
+        <h3>Consejos Importantes</h3>
+        <ul>
+            <li>Mantén una hidratación adecuada bebiendo agua a lo largo del día</li>
+            <li>Trata de respetar los horarios de las comidas lo más posible</li>
+            <li>Si no puedes encontrar exactamente los mismos alimentos, busca sustitutos con perfiles nutricionales similares</li>
+            <li>Presta atención a las porciones y usa básculas para medir con precisión</li>
+        </ul>
+        
+        <div class="notes">
+            <strong>Nota importante:</strong> Consulta siempre con un profesional de la salud antes de iniciar cualquier plan de alimentación, especialmente si tienes condiciones médicas preexistentes.
+        </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
